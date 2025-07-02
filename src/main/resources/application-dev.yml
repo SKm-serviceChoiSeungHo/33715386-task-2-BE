@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: task2-dev
+
+  aot:
+    enabled: false  # AOT 비활성화 설정 추가
+
+  config:
+    import:
+      - optional:file:env/dev.env[.properties]
+
+  datasource:
+    url: ${MYSQL_URL}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+

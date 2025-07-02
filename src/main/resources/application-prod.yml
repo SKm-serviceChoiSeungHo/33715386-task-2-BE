@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: task2-prod
+
+  config:
+    import:
+      - file:env/prod.env[.properties]
+
+  datasource:
+    url: ${MYSQL_URL}
+    username: ${MYSQL_USER}
+    password: ${MYSQL_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
