@@ -21,7 +21,7 @@ public class PeopleServiceImpl implements PeopleService {
     @Override
     public List<SearchRes> searchPeopleByName(String query) {
         List<SearchRes> result = new ArrayList<>();
-        List<People> findPeoples = peopleRepository.findByNameContainingIgnoreCase(query);
+        List<People> findPeoples = peopleRepository.findTop20ByNameContainingIgnoreCase(query);
         for (People people : findPeoples) {
             result.add(SearchRes.of(people));
         }

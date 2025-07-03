@@ -19,7 +19,7 @@ public class DataInitializer {
     public void initializeMembers() {
         if (peopleRepository.count() > 0) return;
 
-        IntStream.range(1, 10001).forEach(i -> {
+        IntStream.range(1, 100001).forEach(i -> {
             People person = People.builder()
                     .id(UUID.randomUUID().toString())
                     .name("이름" + i)

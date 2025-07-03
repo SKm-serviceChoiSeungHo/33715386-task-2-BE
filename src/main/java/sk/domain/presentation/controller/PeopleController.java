@@ -12,15 +12,19 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/people")
 @RequiredArgsConstructor
+
 public class PeopleController {
 
     private final PeopleService peopleService;
 
+    // 이름 검색 실시간
     @GetMapping("/search")
     public ResponseEntity<List<SearchRes>> searchPeople(@RequestParam("query") String query) {
         return ResponseEntity.ok(peopleService.searchPeopleByName(query));
     }
 
+
+    // 이름 상세 정보
     @GetMapping("/detail")
     public ResponseEntity<List<PeopleDetailRes>> getPeopleDetails(@RequestParam("name") String name) {
         return ResponseEntity.ok(peopleService.getPeopleDetailsByName(name));

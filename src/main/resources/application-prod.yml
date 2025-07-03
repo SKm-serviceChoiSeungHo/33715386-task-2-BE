@@ -14,3 +14,5 @@ spring:
     hibernate:
       ddl-auto: update
 
+cors:
+  allowed-origin: ${CORS_ALLOWED_ORIGIN}
